@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/fonts.css">
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/media.css">
+
+    <script defer src="../js/script.js"></script>
+    <title>Domino's Pizza - пиццерия №1 в Киеве</title>
+</head>
+<body>
+    <div style="height: 50px;"></div>
+    <header class="main-header">
+        <div class="main-header__content">  
+
+            <div class="main-header__logo-link desktop-logo"> <a href="#"> <img src="../img/logo.png" alt="Logo"> </a> </div>
+            <div class="main-header__logo-link mobile-logo"> <a href="#"> <img src="../img/logo-mobile.png" alt="Logo"> </a> </div>
+
+            <div class="main-header__navigation">
+                <nav class="navigation">
+                    <div class="nav-link">
+                        <a href="#">Акции</a>
+                    </div>
+                    <div class="nav-link">
+                        <a href="#">Пицца</a>
+                    </div>
+                    <div class="nav-link">
+                        <a href="#">Напитки</a>
+                    </div>
+                    <div class="nav-link">
+                        <a href="#">Сайды</a>
+                    </div>
+                    <div class="nav-link">
+                        <a href="#">Десерты</a>
+                    </div>
+                </nav>
+            </div>
+
+            <div class="main-header__cart">
+                <div class="cart-item">
+                    <div class="cart_wrapper">
+                        <div class="button-cart">
+                            <div class="button-cart__icon">
+                                <div class="cart-info-quantity">00</div>
+                                <img src="../img/shopping-cart.png" alt="Shopping Cart">
+                            </div>
+                            <button class="button-cart__button" disabled>Заказать</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="main-header__hamburger-menu">
+                <div class="header__hamburger-wrap">
+                    <div class="header__hamburger-menu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </header>
+
+
+    <main>
+        <div class="container">
+            <div class="main-slider">
+                <div class="main-slider__content">
+                    <div class="slider-image">
+                        <a href="#" class="slider-link active-link"><div class="slider-link__description"></div> <img src="../img/slider-first.jpg" alt="first"></a>
+                        <a href="#" class="slider-link"><div class="slider-link__description"></div> <img src="../img/slider-second.jpg" alt="second"></a>
+                        <a href="#" class="slider-link"><div class="slider-link__description"><p> Обновленный режим работы </p></div> <img src="../img/slider-third.jpg" alt="third"></a>
+                        <a href="#" class="slider-link"><div class="slider-link__description"><p> С 22:00 до 7:00 </p></br> <span>действует только доставка и адресная доставка(вы можете забрать ваш заказ у входа в пиццерию)</span></div> <img src="../img/slider-forth.jpg" alt="forth"></a>
+                        <a href="#" class="slider-link"><div class="slider-link__description"></div> <img src="../img/slider-fifth.jpg" alt="fifth"></a>
+                        <a href="#" class="slider-link"><div class="slider-link__description"></div> <img src="../img/slider-sixth.jpg" alt="sixth"></a>
+                        <button class="slide-changer" id="slide-left"></button>
+                        <button class="slide-changer" id="slide-right"></button>
+                    </div>
+                </div>
+                <div class="main-slider__buttons">
+                    <ul>
+                        <li class="slide-check active-slide"><button>1</button></li>
+                        <li class="slide-check"><button>2</button></li>
+                        <li class="slide-check"><button>3</button></li>
+                        <li class="slide-check"><button>4</button></li>
+                        <li class="slide-check"><button>5</button></li>
+                        <li class="slide-check"><button>6</button></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="product-list__container">
+
+                <div class="product-list__options">
+                    <div class="product-list__sort">
+                        <button id="sort-button"> Сортировка </button>
+                        <div class="sort-button__icon"> 
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                        <div class="sort-list">
+                            <ul class="drop-down-list">
+                                <li class="drop-down-list__item">Цена высокая-низкая</li>
+                                <li class="drop-down-list__item">Цена низкая-высокая</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-list-wrapper">
+                    <div class="product-list__title">Пицца: Классические</div>
+                    <div class="product-list">
+                        <div class="product-list__item">
+                            <div class="product-block">
+                                <div class="product-block__image"></div>
+                                <div class="product-block__description"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-list-wrapper">
+                    <div class="product-list__title">Пицца: Фирменные</div>
+                    <div class="product-list">
+                        <div class="product-list__item">
+                            <div class="product-block">
+                                <div class="product-block__image"></div>
+                                <div class="product-block__description"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-list-wrapper">
+                    <div class="product-list__title">Пицца: Легенды</div>
+                    <div class="product-list">
+                        <div class="product-list__item">
+                            <div class="product-block">
+                                <div class="product-block__image"></div>
+                                <div class="product-block__description"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-list-wrapper">
+                    <div class="product-list__title">Пицца: Премиум</div>
+                    <div class="product-list">
+                        <div class="product-list__item">
+                            <div class="product-block">
+                                <div class="product-block__image"></div>
+                                <div class="product-block__description"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+    <footer></footer>
+    <script src="../js/slider.js"></script>
+</body>
+</html>
