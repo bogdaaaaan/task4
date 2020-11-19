@@ -1,4 +1,5 @@
-@import "../css/media.css";
+@import "css/media.css";
+@import "css/fonts.css";
 
 * {
     box-sizing: border-box;
@@ -175,7 +176,6 @@ img {
     width: 100%;
     height: 50px;
 }
-
 
 .navigation {
     width: 100%;
