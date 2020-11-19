@@ -566,6 +566,12 @@ main {
 .product-list__item {
     height: 100%;
     width: 100%;
+    border-radius: 25px;
+}
+
+.product-list__item:hover {
+    box-shadow: 0 0 15px rgba(0,0,0,.5);
+    transition: all .2s linear;
 }
 
 .product-block {
