@@ -47,3 +47,14 @@ document.getElementById('slide-right').addEventListener('click', () => {
     changePosition('right')
 });
 
+// Sort button
+document.getElementById('sort-button').addEventListener('click', () => {
+    document.querySelector('.sort-list').classList.toggle('active-list');
+}) 
+
+
+// Side menu button
+document.getElementById('side-menu-btn').addEventListener('click', ()=> {
+    document.querySelector('.header__hamburger-menu').classList.toggle('open');
+    document.querySelector('.side-menu').classList.toggle('open');
+})
