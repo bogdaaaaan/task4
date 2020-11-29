@@ -1,45 +1,61 @@
+import './getJson.js';
+import './additional.js';
 import Drinks from './views/classes/Drinks.js'
 import Home from './views/classes/Home.js'
 import Pizza from './views/classes/Pizza.js'
 import Discounts from './views/classes/Discounts.js'
-import Slider from './slider.js';
+import PizzaProduct from './views/classes/PizzaProduct.js'
+import DiscountPromo from './views/classes/DiscountPromo.js'
 
+const pathToRegex = path => new RegExp("^" + path.replace(/\//g, "\\/").replace(/:\w+/g, "(.+)") + "$");
+
+const getParams = match => {
+    const values = match.result.slice(1);
+    const keys = Array.from(match.route.path.replace('#', "/").matchAll(/:(\w+)/g)).map(result => result[1]);
+
+    return Object.fromEntries(keys.map((key, i) => {
+        return [key, values[i]];
+    }));
+};
 
 const router = async () => {
     const routes = [
         { path: "#", view: Home },
         { path: "#pizza", view: Pizza },
+        { path: "#pizza/:id", view: PizzaProduct },
         { path: "#drinks", view: Drinks },
-        { path: "#discounts", view: Discounts }
+        { path: "#discounts", view: Discounts },
+        { path: "#discounts/:id", view: DiscountPromo }
     ];
 
     const potentialMatches = routes.map(route => {
+        let url = "/" + location.href.split('#')[1];
         return {
             route: route,
-            isMatch: location.hash === route.path
+            result: url.match(pathToRegex(route.path.replace('#', "/")))
         };
     });
 
-    let match = potentialMatches.find(potentialMatch => potentialMatch.isMatch);
-    if(!match) {
+    let match = potentialMatches.find(potentialMatch => potentialMatch.result !== null);
+
+    if (!match) {
         match = {
             route: routes[0],
-            isMatch: true
+            result: [location.pathname]
         };
+        if (location.pathname !== "") {
+            navigateTo("#");
+        }
+       
+    }
 
-        if(location.hash !== "") {
-            navigateTo("#")
-        };
-        
-    };
-
-    const view = new match.route.view();
+    const view = new match.route.view(getParams(match));
 
     document.querySelector("#root").innerHTML = await view.getHtml();
-    additionalHtml(match.route.path);
+    await view.additionalHtml();
 };
 
-const navigateTo = url => {
+export const navigateTo = url => {
     history.pushState(null, null, url);
     router();
 }
@@ -56,37 +72,8 @@ document.addEventListener('DOMContentLoaded', () => {
     router();
 });
 
-
-
-const additionalHtml = path => {
-    if(path === "#drinks") {
-
-        document.getElementById('sort-button').addEventListener('click', () => {
-            document.querySelector('.sort-list').classList.toggle('active-list');
-        });
-
-        document.getElementById('filter-button').addEventListener('click', () => {
-            document.querySelector('.filter-list').classList.toggle('active-list');
-        });
-
-        
-    } else if (path === "#") {
-        const s = new Slider();
-        s.implementScript();
-
-        document.getElementById('sort-button').addEventListener('click', () => {
-            document.querySelector('.sort-list').classList.toggle('active-list');
-        });
-    } else if (path === "#pizza") {
-        document.getElementById('sort-button').addEventListener('click', () => {
-            document.querySelector('.sort-list').classList.toggle('active-list');
-        });
-    }
-}
-
 // Side menu button
 document.getElementById('side-menu-btn').addEventListener('click', ()=> {
     document.querySelector('.header__hamburger-menu').classList.toggle('open');
     document.querySelector('.side-menu').classList.toggle('open');
 });
-

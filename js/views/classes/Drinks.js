@@ -1,8 +1,8 @@
 import AbstractView from './AbstractView.js';
 
 export default class extends AbstractView {
-    constructor() {
-        super();
+    constructor(params) {
+        super(params);
         this.setTitle('Напитки');
     }
 
@@ -10,5 +10,9 @@ export default class extends AbstractView {
         let response = await fetch('js/views/drinks.html');
         let content = await response.text();
         return content;
+    }
+
+    async additionalHtml() {
+       
     }
 }

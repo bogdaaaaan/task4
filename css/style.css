@@ -944,3 +944,133 @@ main {
     color: white;
     cursor: pointer;
 }
+
+/* Pizza Product */
+
+.product-wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+
+}
+
+.product-name {
+    text-align: center;
+    padding: 10px;
+    font-size: 28px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+}
+
+.product {
+    width: 80%;
+    padding: 0 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.ingridients {
+    width: 20%;
+}
+
+.product-image {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.product-image img {
+    object-fit: cover;
+    width: 100%;
+    max-height: 506px;
+    border-radius: 25px;
+    box-shadow: 0 0 15px rgba(0,0,0,.5);
+}
+
+.product-buy .button-block button {
+    padding: 0 15px;
+}
+
+/* Ingridients */
+.ingridients {
+    width: 30%;
+}
+
+.ingridients-list {
+    padding: 0 10px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 200px;
+    grid-gap: 10px;
+}
+
+.ingridients-list__item {
+    width: 100%;
+    min-height: 200px;
+    height: 100%;
+
+}
+
+.ingridients-item__img {
+    width: 100%;
+    height: 80%;
+}
+
+.ingridients-item__img img{
+    width: 100%;
+    height: 100%;
+    border: 1px solid rgb(79, 79, 79, 0.5)
+}
+
+.ingridients-title {
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+}
+
+.ingridients-item__description {
+    text-align: center;
+    height: 20%;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Related products */
+.related-products-block {
+    padding: 10px;
+}
+
+.related-products__title {
+    font-size: 22px;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+}
+
+.related-products__list {
+    padding-top: 10px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 250px;
+    grid-gap: 10px; 
+}
+
+.related-list__item {
+    margin-top: 15px;
+}
+
+.related-item__title {
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+}
+
+.related-item__img{
+    width: 100%;
+
+}
+
+.related-item__img img{
+    width: 100%;
+    height: 200px;
+    border-radius: 25px;
+}

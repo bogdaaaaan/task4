@@ -1,21 +1,19 @@
 import AbstractView from './AbstractView.js';
-import {implementSlider, fillPage} from '/js/additional.js';
+import {showCard} from '/js/additional.js';
 
 export default class extends AbstractView {
     constructor(params) {
         super(params);
-        this.setTitle('Главная страница');
+        this.setTitle('Пицца');
     }
 
     async getHtml() {
-        let response = await fetch('js/views/home.html');
+        let response = await fetch('js/views/pizza_product.html');
         let content = await response.text();
         return content;
     }
 
     async additionalHtml() {
-        implementSlider();
-        fillPage();
-        
+        showCard(this.params);
     }
 }

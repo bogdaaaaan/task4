@@ -1,0 +1,410 @@
+{
+    "slider" : [
+        {
+            "id" : 1,
+            "url" : "#discounts/promo/$",
+            "image" : "img/offers/slider$.jpg",
+            "alt" : "Сумасшедший вторник",
+            "title" : "",
+            "description" : ""
+        },
+        {
+            "id" : 2,
+            "url" : "#discounts/promo/$",
+            "image" : "img/offers/slider$.jpg",
+            "alt" : "Скидка 20%",
+            "title" : "",
+            "description" : ""
+        },
+        {
+            "id" : 3,
+            "url" : "#discounts/promo/$",
+            "image" : "img/offers/slider$.jpg",
+            "alt" : "Обновленный режим работы",
+            "title" : "Обновленный режим работы",
+            "description" : ""
+        },
+        {
+            "id" : 4,
+            "url" : "#discounts/promo/$",
+            "image" : "img/offers/slider$.jpg",
+            "alt" : "Время доставки",
+            "title" : "С 22:00 до 7:00",
+            "description" : "действует только доставка и адресная доставка(вы можете забрать ваш заказ у входа в пиццерию)"
+        },
+        {
+            "id" : 5,
+            "url" : "#discounts/promo/$",
+            "image" : "img/offers/slider$.jpg",
+            "alt" : "Купи пиццу, получи скидку",
+            "title" : "",
+            "description" : ""
+        },
+        {
+            "id" : 6,
+            "url" : "#discounts/promo/$",
+            "image" : "img/offers/slider$.jpg",
+            "alt" : "Безконтактна доставка за 30 хвилин",
+            "title" : "",
+            "description" : ""
+        }
+    ],
+    "promo" : [
+        {
+            "id": 1,
+            "url": "#discounts/promo/$",
+            "promoName": "Сумасшедший вторник!",
+            "promoDate": "25-03-2020",
+            "promoDescription": "Каждый вторник Domino's проводит невероятную акцию «Сумасшедший вторник» - покупай одну среднюю или большую пиццу и получай вторую со скидкой 80%! В акции не участвуют маленькие пиццы. Согласно условиям акции, пицца со скидкой должна быть из меню без добавления ингредиентов. Акция действует на доставку, и для заказов, которые можно будет получить возле точки адресной доставки (у входа в пиццерию). Скидка предоставляется на меньший товар в чеке. Акция не суммируется с другими акционными предложениями. Категория пицц 'Лучшая цена' является акционным предложением, которое не работает во вторник. Во вторник пиццы категории 'Лучшая цена' переходят в категорию пицц 'Классические'. С акцией вторника бонусы не списываются, только начисляются.",
+            "image": "img/offers/slider$.jpg",
+            "alt" : "Сумасшедний вторник!"
+        },
+        {
+            "id": 2,
+            "url": "#discounts/promo/$",
+            "promoName": "20% на все!",
+            "promoDate": "14-11-2020",
+            "promoDescription": "Новое выгодное предложение! Получай 20% скидки на свой заказ в пиццерии! Акция распространяется на все позиции с меню, кроме алкогольных напитков и безалкогольного пива. Акция действует только для заказов в пиццерии и с собой. Акционное предложение не распространяется на заказы на доставку. Акция не суммируется с другими акционными предложениями. Условия программы лояльности Domino`s Club распространяются на акционное предложение. Акция действует с 16.09.20 по 31.12.20 г.",
+            "image": "img/offers/slider$.jpg",
+            "alt" : "20% на все!"
+        },
+        {
+            "id": 5,
+            "url": "#discounts/promo/$",
+            "promoName": "30% на Сайды!",
+            "promoDate": "08-04-2020",
+            "promoDescription": "Покупай пиццу и получай скидку -30% на Сайды теперь с доставкой! Каждый день получай 30% скидки на порцию крылышек, стрипсов, картошки, хлебцов или пармезан байтс при покупке любой пиццы! Скидка возможна при условии - одна пицца - одна порция сайда. Акция действует на доставку и адресную доставку (заказ выдается около пиццерии). Акция не суммируется с другими акционными предложениями. Условия программы лояльности Domino`s Club распространяются на акционное предложение.",
+            "image": "img/offers/slider$.jpg",
+            "alt" : "30% на Сайды!"
+        },
+        {
+            "id": 6,
+            "url": "#discounts/promo/$",
+            "promoName": "Получи Coca-Cola в свой заказ бесплатно!",
+            "promoDate": "25-11-2020",
+            "promoDescription": "Оформляй заказ с пиццей, или сайдами, или десертом и получай бесплатно напиток Coca-Cola 0.5 л! Одна бутылка Coca-cola 0.5 л предоставляется на один чек, при любом количестве пицц / сайдов / десертов в чеке. Акция действует с 25.11.20. по 30.11.20. Акция действует по заказу с собой, в пиццерии и на доставку. Количество промо-наборов с напитком Coca-cola в объеме 0.5 л ограничено. Акция действует до окончания промо-наборов с напитком Coca-cola в объеме 0.5 л на каждой отдельной пиццерии и зоне доставки. Акция суммируется с другими акционными предложениями.",
+            "image": "img/offers/slider$.jpg",
+            "alt" : "Получи Coca-Cola в свой заказ бесплатно!"
+        }
+    ],
+    "category" : [
+        {
+            "id" : 1,
+            "Name" : "Лучшая цена"
+        },
+        {
+            "id" : 2,
+            "Name" : "Классические"
+        },
+        {
+            "id" : 3,
+            "Name" : "Фирменные"
+        },
+        {
+            "id" : 4,
+            "Name" : "Легенды"
+        }
+    ],
+    "pizza" : [
+        {
+            "id" : 1,
+            "url": "pizza_pepperoni",
+            "category" : "best_price",
+            "categoryId": 1,
+            "productName": "Пицца Пепперони с томатами",
+            "ingridients": [2,1,3,4],
+            "price": 92.99,
+            "images": "img/pizza/$.jpg",
+            "relatedProductIds": [2,3] 
+        },
+        {
+            "id" : 2,
+            "url": "pizza_margarita",
+            "category" : "best_price",
+            "categoryId": 1,
+            "productName": "Пицца Маргарита",
+            "ingridients": [2,5],
+            "price": 92.99,
+            "images": "img/pizza/$.jpg",
+            "relatedProductIds": [1,3] 
+        },
+        {
+            "id" : 3,
+            "url": "pizza_texas",
+            "category" : "best_price",
+            "categoryId": 1,
+            "productName": "Пицца Техас",
+            "ingridients": [6,7,8,9,2,4],
+            "price": 92.99,
+            "images": "img/pizza/$.jpg",
+            "relatedProductIds": [1,2] 
+        },
+        {
+            "id" : 4,
+            "url": "pizza_pepperoni_bluz",
+            "category" : "classic",
+            "categoryId": 2,
+            "productName": "Пицца Пепперони Блюз",
+            "ingridients": [10, 2, 1, 11],
+            "price": 124.99,
+            "images": "img/pizza/$.jpg",
+            "relatedProductIds": [5,6,7] 
+        },
+        {
+            "id" : 5,
+            "url": "pizza_tony_pepperoni",
+            "category" : "classic",
+            "categoryId": 2,
+            "productName": "Пицца Тони Пепперони",
+            "ingridients": [1,2,5],
+            "price": 124.99,
+            "images": "img/pizza/$.jpg",
+            "relatedProductIds": [4,6,7] 
+        },
+        {
+            "id" : 6,
+            "url": "pizza_gawaii",
+            "category" : "classic",
+            "categoryId": 2,
+            "productName": "Пицца Гавайская",
+            "ingridients": [12,13,5],
+            "price": 124.99,
+            "images": "img/pizza/$.jpg",
+            "relatedProductIds": [5,4,7] 
+        },
+        {
+            "id" : 7,
+            "url": "pizza_barbeque",
+            "category" : "classic",
+            "categoryId": 2,
+            "productName": "Пицца Барбекю",
+            "ingridients": [12, 7, 14, 8, 2, 4],
+            "price": 124.99,
+            "images": "img/pizza/$.jpg",
+            "relatedProductIds": [5,6,4] 
+        },
+        {
+            "id" : 8,
+            "url": "pizza_country",
+            "category" : "branded",
+            "categoryId": 3,
+            "productName": "Пицца Кантри",
+            "ingridients": [7, 14, 15, 8, 2, 16, 17],
+            "price": 152.99,
+            "images": "img/pizza/$.jpg",
+            "relatedProductIds": [9,10,11,12,13] 
+        },
+        {
+            "id" : 9,
+            "url": "pizza_ovochnaya_feeria",
+            "category" : "branded",
+            "categoryId": 3,
+            "productName": "Пицца Овощная Феерия",
+            "ingridients": [18, 7, 19, 8, 2, 3, 5],
+            "price": 152.99,
+            "images": "img/pizza/$.jpg",
+            "relatedProductIds": [8,10,11,12,13] 
+        },
+        {
+            "id" : 10,
+            "url": "pizza_curry",
+            "category" : "branded",
+            "categoryId": 3,
+            "productName": "Пицца Карри",
+            "ingridients": [12,20,7,13,2],
+            "price": 152.99,
+            "images": "img/pizza/$.jpg",
+            "relatedProductIds": [8,9,11,12,13] 
+        },
+        {
+            "id" : 11,
+            "url": "pizza_paparazzi",
+            "category" : "branded",
+            "categoryId": 3,
+            "productName": "Пицца ПапараZZи",
+            "ingridients": [18, 2,1,3,11],
+            "price": 152.99,
+            "images": "img/pizza/$.jpg",
+            "relatedProductIds": [8,9,10,12,13] 
+        },
+        {
+            "id" : 12,
+            "url": "pizza_carbonara",
+            "category" : "branded",
+            "categoryId": 3,
+            "productName": "Пицца Карбонара",
+            "ingridients": [7,14,15,8,2,11],
+            "price": 152.99,
+            "images": "img/pizza/$.jpg",
+            "relatedProductIds": [8,9,11,10,13] 
+        },
+        {
+            "id" : 13,
+            "url": "pizza_bavarskaya",
+            "category" : "branded",
+            "categoryId": 3,
+            "productName": "Пицца Баварская",
+            "ingridients": [21, 9, 2, 4],
+            "price": 152.99,
+            "images": "img/pizza/$.jpg",
+            "relatedProductIds": [8,9,11,12,10] 
+        },
+        {
+            "id" : 14,
+            "url": "pizza_provans",
+            "category" : "legends",
+            "categoryId": 4,
+            "productName": "Пицца Прованс",
+            "ingridients": [10,15,2,1,3,11],
+            "price": 172.99,
+            "images": "img/pizza/$.jpg",
+            "relatedProductIds": [15,16] 
+        },
+        {
+            "id" : 15,
+            "url": "pizza_spicy",
+            "category" : "legends",
+            "categoryId": 4,
+            "productName": "Пицца Спайси",
+            "ingridients": [14,2,1,3,5],
+            "price": 172.99,
+            "images": "img/pizza/$.jpg",
+            "relatedProductIds": [14,16] 
+        },
+        {
+            "id" : 16,
+            "url": "pizza_bbq_delux",
+            "category" : "legends",
+            "categoryId": 4,
+            "productName": "Пицца BBQ Делюкс",
+            "ingridients": [7,21,22,8,2,1,4],
+            "price": 172.99,
+            "images": "img/pizza/$.jpg",
+            "relatedProductIds": [14,15] 
+        }
+        
+    ],
+    "ingridients" : [
+        {
+            "id": 1,
+            "name" : "Пепперони",
+            "img" : "img/ingridients/$.jpg"
+        },
+        {
+            "id": 2,
+            "name" : "Моцарелла",
+            "img" : "img/ingridients/$.jpg"
+        },
+        {
+            "id": 3,
+            "name" : "Помидоры",
+            "img" : "img/ingridients/$.jpg"
+        },
+        {
+            "id": 4,
+            "name" : "Соус Барбекю",
+            "img" : "img/ingridients/$.jpg"
+        },
+        {
+            "id": 5,
+            "name" : "Соус Domino's",
+            "img" : "img/ingridients/$.jpg"
+        },
+        {
+            "id": 6,
+            "name" : "Кукуруза",
+            "img" : "img/ingridients/$.jpg"
+        },
+        {
+            "id": 7,
+            "name" : "Лук",
+            "img" : "img/ingridients/$.jpg"
+        },
+        {
+            "id": 8,
+            "name" : "Грибы",
+            "img" : "img/ingridients/$.jpg"
+        },
+        {
+            "id": 9,
+            "name" : "Колбаски баварские",
+            "img" : "img/ingridients/$.jpg"
+        },
+        {
+            "id": 10,
+            "name" : "Бергадер Блю",
+            "img" : "img/ingridients/$.jpg"
+        },
+        {
+            "id": 11,
+            "name" : "Соус Альфредо",
+            "img" : "img/ingridients/$.jpg"
+        },
+        {
+            "id": 12,
+            "name" : "Курица",
+            "img" : "img/ingridients/$.jpg"
+        },
+        {
+            "id": 13,
+            "name" : "Ананас",
+            "img" : "img/ingridients/$.jpg"
+        },
+        {
+            "id": 14,
+            "name" : "Бекон",
+            "img" : "img/ingridients/$.jpg"
+        },
+        {
+            "id": 15,
+            "name" : "Ветчина",
+            "img" : "img/ingridients/$.jpg"
+        },
+        {
+            "id": 16,
+            "name" : "Огурцы маринованные",
+            "img" : "img/ingridients/$.jpg"
+        },
+        {
+            "id": 17,
+            "name" : "Соус Чесночный",
+            "img" : "img/ingridients/$.jpg"
+        },
+        {
+            "id": 18,
+            "name" : "Оливки",
+            "img" : "img/ingridients/$.jpg"
+        },
+        {
+            "id": 19,
+            "name" : "Болгарский Перец",
+            "img" : "img/ingridients/$.jpg"
+        },
+        {
+            "id": 20,
+            "name" : "Соус Карри",
+            "img" : "img/ingridients/$.jpg"
+        },
+        {
+            "id": 21,
+            "name" : "Пармезан",
+            "img" : "img/ingridients/$.jpg"
+        },
+        {
+            "id": 22,
+            "name" : "Болгарский Перец",
+            "img" : "img/ingridients/$.jpg"
+        },
+        {
+            "id": 23,
+            "name" : "Болгарский Перец",
+            "img" : "img/ingridients/$.jpg"
+        },
+        {
+            "id": 24,
+            "name" : "Болгарский Перец",
+            "img" : "img/ingridients/$.jpg"
+        }
+        
+    ]
+}

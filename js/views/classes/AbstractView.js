@@ -1,6 +1,6 @@
 export default class {
-    constructor() {
-
+    constructor(params) {
+        this.params = params;
     }
 
     setTitle(title) {
@@ -9,5 +9,9 @@ export default class {
 
     async getHtml() {
         return "";
+    }
+
+    async additionalHtml() {
+        return;
     }
 }
