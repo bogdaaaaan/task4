@@ -1,5 +1,5 @@
 import AbstractView from './AbstractView.js';
-import {showCard} from '/js/additional.js';
+import {showCard}  from '../additional.js';
 
 export default class extends AbstractView {
     constructor(params) {

@@ -1,21 +1,19 @@
 import AbstractView from './AbstractView.js';
-import {implementSlider, fillPage} from '/js/additional.js';
+import {showPromo}  from '../additional.js';
 
 export default class extends AbstractView {
     constructor(params) {
         super(params);
-        this.setTitle('Главная страница');
+        this.setTitle('Промо');
     }
 
     async getHtml() {
-        let response = await fetch('js/views/home.html');
+        let response = await fetch('js/views/discounts_promo.html');
         let content = await response.text();
         return content;
     }
 
     async additionalHtml() {
-        implementSlider();
-        fillPage();
-        
+        showPromo(this.params);
     }
 }

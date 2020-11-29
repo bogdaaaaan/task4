@@ -1,11 +1,11 @@
 import './getJson.js';
 import './additional.js';
-import Drinks from './views/classes/Drinks.js'
-import Home from './views/classes/Home.js'
-import Pizza from './views/classes/Pizza.js'
-import Discounts from './views/classes/Discounts.js'
-import PizzaProduct from './views/classes/PizzaProduct.js'
-import DiscountPromo from './views/classes/DiscountPromo.js'
+import Drinks from './classes/Drinks.js'
+import Home from './classes/Home.js'
+import Pizza from './classes/Pizza.js'
+import Discounts from './classes/Discounts.js'
+import PizzaProduct from './classes/PizzaProduct.js'
+import DiscountPromo from './classes/DiscountPromo.js'
 
 const pathToRegex = path => new RegExp("^" + path.replace(/\//g, "\\/").replace(/:\w+/g, "(.+)") + "$");
 
