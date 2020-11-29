@@ -383,8 +383,13 @@ export const implementOrder = async function() {
         
 
         document.querySelector('.button-block__cart').addEventListener('click', ()=> {
-            let body = getInfo();
-            sendOrder(body).then(data => success(data)).catch(err => alert('Error! Try again later'));
+            if(!ifEmpty()) {
+                let body = getInfo();
+                sendOrder(body).then(data => success(data)).catch(err => alert('Error! Try again later'));
+            } else {
+                alert('Заполните все поля!');
+            }
+            
         })
         updateTotalCost();
     }
@@ -407,8 +412,30 @@ const getInfo = function() {
         payment : payment,
         total : totalCost,
         cart : cart
-        
     }    
+}
+
+const ifEmpty = () => {
+    let body = getInfo();
+    if (body.name ===  '') {
+        return true;
+    }
+    if (body.phone ===  '') {
+        return true;
+    }
+    if (body.mail ===  '') {
+        return true;
+    }
+    if (body.date ===  '') {
+        return true;
+    }
+    if (body.payment ===  '') {
+        return true;
+    }
+    if (body.totalCost ===  0) {
+        return true;
+    }
+    return false
 }
 
 const success = (data) => {
