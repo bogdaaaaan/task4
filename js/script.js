@@ -6,6 +6,8 @@ import Pizza from './Pizza.js'
 import Discounts from './Discounts.js'
 import PizzaProduct from './PizzaProduct.js'
 import DiscountPromo from './DiscountPromo.js'
+import CartView from './CartView.js';
+import OrderView from './OrderView.js';
 
 const pathToRegex = path => new RegExp("^" + path.replace(/\//g, "\\/").replace(/:\w+/g, "(.+)") + "$");
 
@@ -25,7 +27,9 @@ const router = async () => {
         { path: "#pizza/:id", view: PizzaProduct },
         { path: "#drinks", view: Drinks },
         { path: "#discounts", view: Discounts },
-        { path: "#discounts/:id", view: DiscountPromo }
+        { path: "#discounts/:id", view: DiscountPromo },
+        { path: "#cart", view: CartView },
+        { path: "#order", view: OrderView }
     ];
 
     const potentialMatches = routes.map(route => {
@@ -83,3 +87,4 @@ document.getElementById('side-menu-btn').addEventListener('click', ()=> {
     document.querySelector('.header__hamburger-menu').classList.toggle('open');
     document.querySelector('.side-menu').classList.toggle('open');
 });
+

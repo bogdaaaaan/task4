@@ -1,5 +1,6 @@
 import {promisedSlider,promisedPromo, promisedCategory,promisedPizza, promisedIngridients} from './getJson.js';
 import {navigateTo} from './script.js';
+import {sendOrder} from './sendOrder.js';
 
 // Slider
 export const implementSlider = async function() {
@@ -193,9 +194,7 @@ export const fillPage = async function() {
                     }).catch(function(error) {
                         console.log('Request failed', error)
                       })
-                    document.querySelector('.button-block__cart').addEventListener('click', ()=> {
-                        console.log(Number(document.querySelector('.pizza-price-number').innerHTML));
-                    })
+                   
                 }
             }
         })  
@@ -206,7 +205,12 @@ export const fillPage = async function() {
     })
     .catch(function(error) {
         console.log('Request failed', error)
-    })    
+    })
+    window.onclick = event => {
+        if (event.target.classList.contains('button-block__cart')) {
+            addToCart(Number(event.target.dataset.id));
+        }
+    }
 }
 
 // Product
@@ -227,6 +231,12 @@ export const showCard = async function(params)  {
                     document.querySelector('.product-image').innerHTML += `
                         <img src="`+ (pizza[key].images).replace('$', pizza[key].url) + `" alt="`+pizza[key].productName+`">
                     `
+                    document.querySelector('.product-buy').innerHTML =`
+                    <div class="button-block">
+                        <button class="button-block__cart" data-id="`+pizza[key].id +`">В корзину</button>
+                    </div>
+                    `            
+
                     let ingridients_list = pizza[key].ingridients;
 
                     promisedIngridients.then(ingridients => {
@@ -242,6 +252,7 @@ export const showCard = async function(params)  {
                                     </div>
                                 </div>
                                 `
+                                
                             }
                         }
                     })
@@ -322,4 +333,281 @@ export const showPromo = async function(params) {
     }).catch(function(error) {
         console.log('Request failed', error)
       })
+}
+
+export const implementOrder = async function() {
+    let cart = JSON.parse(localStorage.getItem('cart'));
+    if (cart !== null) {
+        promisedPizza.then(pizza_content => {
+            for (let key in pizza_content) {
+                cart.forEach(element => {
+                    if (pizza_content[key].id === element.id) {
+                        let url = "#pizza/" + pizza_content[key].category + "/" + pizza_content[key].url;
+                        document.querySelector('.cart-block').innerHTML += `
+                        <div class="cart-list__item">
+                            <div class="product-block">
+                                <div class="product-block__image">
+                                    <a href="`+ url + `"><img src="`+ (pizza_content[key].images).replace('$', pizza_content[key].url) +`" alt="`+ pizza_content[key].productName+`"></a>
+                                </div>
+                                <div class="product-block__description">
+                                    <div class="block-description__title">
+                                        <a href="`+ url +`">` + pizza_content[key].productName + `</a>
+                                    </div>
+                                    <div class="price-block">
+                                        <span class="pizza-price-number">`+pizza_content[key].price +`</span>
+                                        <span class="pizza-price-text">грн.</span>
+                                    </div>
+                                    <div class="cart-description__buy">
+                                        
+                                        <div class="cart-button-block">
+                                            <span>Кол-во: </span><span id="quantity`+pizza_content[key].id+`">`+ element.quantity +`</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        `
+                    }
+                });
+                
+            } 
+        })
+        document.querySelector('.order-block').innerHTML += `
+        <div class="total-cost">
+            <span>Общая стоимость: </span><span id="total-cost"></span><span > грн.</span>
+        </div>
+        <div class="order-button">
+            <input type="submit" class="button-block__cart" value="Заказать"></input>
+        </div>
+        `
+        
+
+        document.querySelector('.button-block__cart').addEventListener('click', ()=> {
+            let body = getInfo();
+            sendOrder(body).then(data => success(data)).catch(err => alert('Error! Try again later'));
+        })
+        updateTotalCost();
+    }
+}
+
+const getInfo = function() {
+    let name = document.getElementById('name').value;
+    let phone = document.getElementById('phone').value;
+    let mail = document.getElementById('mail').value;
+    let date = document.getElementById('date').value;
+    let time = document.getElementById('time').value;
+    let payment = document.getElementById('payment').value;
+    let totalCost = document.getElementById('total-cost').innerHTML;
+    return { 
+        name : name,
+        phone : phone, 
+        mail : mail,
+        date : date,
+        time : time,
+        payment : payment,
+        total : totalCost,
+        cart : cart
+        
+    }    
+}
+
+const success = (data) => {
+    document.getElementById('root').innerHTML = `
+    <div class="container">
+        <div class="info-wrap">
+            <div class="person-info">
+                <div class="person-name">`+"Имя: "+data.name +`</div>
+                <div class="person-phone">`+"Телефон: "+data.phone+`</div>
+                <div class="person-mail">`+"Почта: "+data.mail+`</div>
+                <div class="date-of-order">`+"Дата: "+data.date+`</div>
+                <div class="time-of-order">`+"Время: "+data.time+`</div>
+                <div class="payment-option">`+"Способ оплаты: "+data.payment+`</div>
+                <div class="total-cost">`+"Общая стоимость: "+data.total+" .грн"+`</div>
+            </div>
+            <div class="products-block">
+                
+            </div>
+        </div>
+    </div>
+    `
+    let cart = JSON.parse(localStorage.getItem('cart'));
+    if (cart !== null) {
+        promisedPizza.then(pizza_content => {
+            for (let key in pizza_content) {
+                cart.forEach(element => {
+                    if (pizza_content[key].id === element.id) {
+                        let url = "#pizza/" + pizza_content[key].category + "/" + pizza_content[key].url;
+                        document.querySelector('.products-block').innerHTML += `
+                        <div class="cart-list__item">
+                            <div class="product-block">
+                                <div class="product-block__image">
+                                    <a href="`+ url + `"><img src="`+ (pizza_content[key].images).replace('$', pizza_content[key].url) +`" alt="`+ pizza_content[key].productName+`"></a>
+                                </div>
+                                <div class="product-block__description">
+                                    <div class="block-description__title">
+                                        <a href="`+ url +`">` + pizza_content[key].productName + `</a>
+                                    </div>
+                                    <div class="price-block">
+                                        <span class="pizza-price-number">`+pizza_content[key].price +`</span>
+                                        <span class="pizza-price-text">грн.</span>
+                                    </div>
+                                    <div class="cart-description__buy">
+                                        
+                                        <div class="cart-button-block">
+                                            <span>Кол-во: </span><span id="quantity`+pizza_content[key].id+`">`+ element.quantity +`</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        `
+                    }
+                });
+                
+            } 
+        })
+    }
+}
+
+export const implementCart = async function() {
+    let cart = JSON.parse(localStorage.getItem('cart'));
+    if (cart !== null) {
+        promisedPizza.then(pizza_content => {
+            for (let key in pizza_content) {
+                cart.forEach(element => {
+                    if (pizza_content[key].id === element.id) {
+                        let url = "#pizza/" + pizza_content[key].category + "/" + pizza_content[key].url;
+                        document.querySelector('.cart-list__container').innerHTML += `
+                        <div class="cart-list__item">
+                            <div class="product-block">
+                                <div class="product-block__image">
+                                    <a href="`+ url + `"><img src="`+ (pizza_content[key].images).replace('$', pizza_content[key].url) +`" alt="`+ pizza_content[key].productName+`"></a>
+                                </div>
+                                <div class="product-block__description">
+                                    <div class="block-description__title">
+                                        <a href="`+ url +`">` + pizza_content[key].productName + `</a>
+                                    </div>
+                                    <div class="price-block">
+                                            <span class="pizza-price-number">`+pizza_content[key].price +`</span>
+                                            <span class="pizza-price-text">грн.</span>
+                                        </div>
+                                    <div class="cart-description__buy">
+                                        
+                                        <div class="cart-button-block">
+                                            <button class="quantity-button plus" data-id="`+pizza_content[key].id +`">+</button>
+                                            <button class="quantity-button minus" data-id="`+pizza_content[key].id +`">-</button>
+                                            <span>Кол-во: </span><span id="quantity`+pizza_content[key].id+`">`+ element.quantity +`</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        `
+                        
+                    }
+                });
+                
+            } 
+        })
+        document.querySelector('.cart-order').innerHTML += `
+        <div class="total-cost">
+            <span>Общая стоимость: </span><span id="total-cost"></span><span > грн.</span>
+        </div>
+        <div class="order-button">
+            <a href="#order">
+                <button class="button-block__cart"> Заказать </button>
+            </a>
+        </div>
+        `
+        updateTotalCost()
+    }
+    window.onclick = event => {
+        if (event.target.classList.contains('plus')) {
+            plusQuantity(Number(event.target.dataset.id));
+            updateTotalCost();
+        }
+        if (event.target.classList.contains('minus')) {
+            minusQuantity(Number(event.target.dataset.id));
+            updateTotalCost();
+        }
+    }
+}
+
+
+let cart = [
+
+];
+let local_cart = JSON.parse(localStorage.getItem('cart'));
+if (local_cart !== null) {
+    local_cart.forEach(element => {
+        cart.push(element);
+    })
+}
+
+async function addToCart(id) {
+    let alreadyInCart = false;
+    cart.forEach(element => {
+        if(id === element.id) {
+            alreadyInCart = true;
+            element.quantity++;
+        }
+    });
+    if (!alreadyInCart) {
+        cart.push({id : id, quantity : 1});
+    }
+    localStorage.setItem('cart', JSON.stringify(cart));
+}
+
+
+function plusQuantity(id) {
+    cart.forEach(element => {
+        if (element.id === id) {
+            element.quantity++;
+            localStorage.setItem('cart', JSON.stringify(cart));
+            document.getElementById('quantity'+id).innerHTML = element.quantity;
+        }
+    })
+}
+
+
+function minusQuantity(id) {
+    cart.forEach(element => {
+        if (element.id === id) {
+            element.quantity--;
+            if (element.quantity === 0) {
+                cart = deleteFromCart(id);
+            }
+            localStorage.setItem('cart', JSON.stringify(cart));
+            document.querySelector('.cart-list__container').innerHTML = "";
+            document.querySelector('.cart-order').innerHTML = "";
+            implementCart();
+        }
+    })
+}
+
+function deleteFromCart(id) {
+    let temp_cart = [];
+    cart.forEach(element => {
+        if (element.id !== id) {
+            temp_cart.push(element);
+        }
+    })
+    return temp_cart;
+}
+
+function updateTotalCost() {
+    let totalCost = 0;
+    promisedPizza.then(pizza_content => {
+        for (let key in pizza_content) {
+            cart.forEach(element => {
+                if (pizza_content[key].id === element.id) {
+                    totalCost += (pizza_content[key].price * element.quantity);
+                    
+                }
+            });
+            
+        }
+        document.getElementById('total-cost').innerHTML = totalCost.toFixed(2);
+    })
+    
 }
