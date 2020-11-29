@@ -1,19 +1,19 @@
 import AbstractView from './AbstractView.js';
-import {fillPage}  from '../additional.js';
+import {showPromo}  from './additional.js';
 
 export default class extends AbstractView {
     constructor(params) {
         super(params);
-        this.setTitle('Пицца');
+        this.setTitle('Промо');
     }
 
     async getHtml() {
-        let response = await fetch('js/views/pizza.html');
+        let response = await fetch('js/discounts_promo.html');
         let content = await response.text();
         return content;
     }
 
     async additionalHtml() {
-       fillPage();
+        showPromo(this.params);
     }
 }
