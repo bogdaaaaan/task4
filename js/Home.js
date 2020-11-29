@@ -16,6 +16,5 @@ export default class extends AbstractView {
     async additionalHtml() {
         implementSlider();
         fillPage();
-        
     }
 }

@@ -23,8 +23,6 @@ export const implementSlider = async function() {
             }
             sliderLogic();
 
-        } else {
-            document.querySelector('.main-slider').style.display = "none";
         }
     }).catch(function(error) {
         console.log('Request failed', error)
@@ -286,11 +284,12 @@ export const showCard = async function(params)  {
 export const showPromo = async function(params) {
     let url = (params.id)
     let id = url.split('/')[1];
-    
+    var validUrl = false;
     promisedPromo.then((promo_content) => {
         if (promo_content.length > 0) {
             for (let key in promo_content) {
                 if (promo_content[key].id === Number(id)) {
+                    validUrl = true;
                     document.querySelector('.promo-list').innerHTML += `
                     <div class="promo-list__item">
                         <div class="promo-image">
@@ -316,6 +315,9 @@ export const showPromo = async function(params) {
                 }
             }
 
+        }
+        if (!validUrl) {
+            navigateTo('#');
         }
     }).catch(function(error) {
         console.log('Request failed', error)

@@ -53,10 +53,16 @@ const router = async () => {
 
     document.querySelector("#root").innerHTML = await view.getHtml();
     await view.additionalHtml();
+    window.scroll({
+        left: 0,
+        top: 0, 
+        behavior: 'smooth'
+    });
 };
 
 export const navigateTo = url => {
     history.pushState(null, null, url);
+ 
     router();
 }
 
