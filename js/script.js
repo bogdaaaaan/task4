@@ -1,3 +1,5 @@
+
+
 import './getJson.js';
 import './additional.js';
 import Drinks from './Drinks.js'
@@ -36,7 +38,7 @@ const router = async () => {
             route: routes[0],
             result: [location.pathname]
         };
-        if (location.pathname !== "/") {
+        if (location.pathname !== "/task4/" || location.pathname !== "/") {
             navigateTo("#");
         }
        
