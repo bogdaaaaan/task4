@@ -1,4 +1,4 @@
-import {promisedSlider,promisedPromo, promisedCategory,promisedPizza, promisedIngridients} from './getJson.js';
+import {promisedSlider, promisedPromo, promisedCategory, promisedPizza, promisedIngridients} from './getJson.js';
 import {navigateTo} from './script.js';
 import {sendOrder} from './sendOrder.js';
 
@@ -388,6 +388,8 @@ export const implementOrder = async function() {
             if(!ifEmpty()) {
                 let body = getInfo();
                 sendOrder(body).then(data => success(data)).catch(err => alert('Error! Try again later'));
+                cart = [];
+                localStorage.setItem('cart', '');
             } else {
                 alert('Заполните все поля!');
             }

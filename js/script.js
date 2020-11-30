@@ -1,5 +1,3 @@
-
-
 import './getJson.js';
 import './additional.js';
 import Drinks from './Drinks.js'
@@ -10,6 +8,7 @@ import PizzaProduct from './PizzaProduct.js'
 import DiscountPromo from './DiscountPromo.js'
 import CartView from './CartView.js';
 import OrderView from './OrderView.js';
+
 
 const router = async () => {
     const routes = [
@@ -38,10 +37,7 @@ const router = async () => {
             route: routes[0],
             result: [location.pathname]
         };
-        if (location.pathname !== "/task4/" || location.pathname !== "/") {
-            navigateTo("#");
-        }
-       
+        window.history.replaceState(null, null, "#");
     }
 
     const view = new match.route.view(getParams(match));
@@ -68,7 +64,6 @@ const getParams = match => {
 
 export const navigateTo = url => {
     history.pushState(null, null, url);
- 
     router();
 }
 
