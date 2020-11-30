@@ -291,7 +291,11 @@ export const showCard = async function(params)  {
     }).catch(function(error) {
         console.log('Request failed', error)
     })
-
+    window.onclick = event => {
+        if (event.target.classList.contains('button-block__cart')) {
+            addToCart(Number(event.target.dataset.id));
+        }
+    }
 }
 
 export const showPromo = async function(params) {
