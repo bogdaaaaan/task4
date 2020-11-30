@@ -7,7 +7,7 @@ export default class extends AbstractView {
     }
 
     async getHtml() {
-        let response = await fetch('views/drinks.html');
+        let response = await fetch('js/drinks.html');
         let content = await response.text();
         return content;
     }
