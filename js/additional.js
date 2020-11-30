@@ -392,8 +392,6 @@ export const implementOrder = async function() {
             if(!ifEmpty()) {
                 let body = getInfo();
                 sendOrder(body).then(data => success(data)).catch(err => alert('Error! Try again later'));
-                cart = [];
-                localStorage.setItem('cart', '');
             } else {
                 alert('Заполните все поля!');
             }
