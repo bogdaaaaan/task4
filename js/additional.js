@@ -22,6 +22,7 @@ export const implementSlider = async function() {
                 <li class="slide-check"><button>` + slider_content[key].id + `</button></li>
                 `
             }
+
             sliderLogic();
 
         }
@@ -212,6 +213,7 @@ export const fillPage = async function() {
         }
     }
 }
+
 
 // Product
 export const showCard = async function(params)  {

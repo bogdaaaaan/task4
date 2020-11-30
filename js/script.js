@@ -36,7 +36,7 @@ const router = async () => {
             route: routes[0],
             result: [location.pathname]
         };
-        if (location.pathname !== "") {
+        if (location.pathname !== "/") {
             navigateTo("#");
         }
        
@@ -87,4 +87,3 @@ document.getElementById('side-menu-btn').addEventListener('click', ()=> {
     document.querySelector('.header__hamburger-menu').classList.toggle('open');
     document.querySelector('.side-menu').classList.toggle('open');
 });
-

@@ -10,3 +10,4 @@ export const promisedIngridients = getContent(`${link3}/ingridients`);
 function getContent(url) {
     return fetch(url).then(content => content.json());
 }
+
