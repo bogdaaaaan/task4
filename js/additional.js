@@ -111,7 +111,7 @@ export const implementPromo = async function() {
                         </div>
                         <div class="promo-description__button">
                             <div class="button-block">
-                                <a  class="button-block__cart show-more" href="`+ (promo_content[key].url).replace('$', promo_content[key].id) +`">Подробнее</a>
+                                <a class="show-more" href="`+ (promo_content[key].url).replace('$', promo_content[key].id) +`">Подробнее</a>
                             </div>
                         </div>
                     </div>

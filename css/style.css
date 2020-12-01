@@ -823,6 +823,21 @@ main {
     outline: none;
 }
 
+.show-more {
+    height: 50px;
+    width: 100%;
+    font-size: 18px;
+    font-weight: 700;
+    font-family: Open Sans,sans-serif;
+    -webkit-transition: all .3s;
+    -o-transition: all .3s;
+    transition: all .3s;
+    color: #fff;
+    border: none;
+    border-radius: 15px;
+    background: #e31837;
+    outline: none;
+}
 
 .button-block__cart:hover {
     background: #bf142e;
