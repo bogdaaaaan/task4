@@ -570,12 +570,15 @@ export const implementCart = async function() {
 let cart = [
 
 ];
-let local_cart = JSON.parse(localStorage.getItem('cart'));
-if (local_cart !== null) {
-    local_cart.forEach(element => {
-        cart.push(element);
-    })
+if (localStorage.getItem('cart') !== '') {
+    let local_cart = JSON.parse(localStorage.getItem('cart'));
+    if (local_cart !== null ) {
+        local_cart.forEach(element => {
+            cart.push(element);
+        })
+    }
 }
+
 
 async function addToCart(id) {
     let alreadyInCart = false;
